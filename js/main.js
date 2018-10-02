@@ -67,5 +67,8 @@ function checkOWin(button) {
 
 // function clear() {
 //
+// x = [];
+// y = [];
+// button.innerHTML = null;
 //
 // }
