@@ -2,3 +2,26 @@
 
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+h1{
+  text-align: center; 
+}
+
+
+table {
+  width: 30%;
+  table-layout: fixed;
+
+}
+
+td {
+  border: 5px solid blue;
+  height: 150px;
+
+}
+
+.editbtn {
+  color: blue;
+  display: block;
+  margin: auto;
+}
