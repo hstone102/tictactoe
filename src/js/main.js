@@ -13,7 +13,7 @@ document.onreadystatechange = function () {
 
 function start() {
     // Create event listeners on every button
-    let buttons = document.getElementsByClassName("editbtn");
+    let buttons = document.getElementsByClassName("space");
     for (let i = 0; i < buttons.length; i++) {
         console.log("anything");
         buttons[i].addEventListener("click", buttonLogic);
