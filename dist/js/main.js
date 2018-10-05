@@ -4,6 +4,7 @@ let buttonTextX = "X";
 let buttonTextO = "O";
 let counter = 2;
 let buttons = document.getElementsByClassName("space");
+let message = document.getElementById('message');
 
 document.onreadystatechange = function () {
   if (document.readyState == "interactive") {
@@ -15,9 +16,12 @@ document.onreadystatechange = function () {
 function start() {
   // Create event listeners on every button
   counter = 2;
+  x = [];
+  o = [];
+
+  message.innerHTML = "It's X's turn";
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].innerHTML = '';
-    //message.innerHTML("It's X's turn");
     buttons[i].addEventListener("click", Move);
   }
 }
@@ -81,6 +85,6 @@ function removeClicksFromSpaces() {
   //let buttons = document.getElementsByClassName("space");
   for (let i = 0; i < buttons.length; i++) {
     console.log("you are in remove clicks");
-    buttons[i].removeEventListener('click', start);
+    buttons[i].removeEventListener('click', Move);
   }
 }
