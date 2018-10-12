@@ -1,7 +1,7 @@
 let x = [];
 let o = [];
-let buttonTextX = "X";
-let buttonTextO = "O";
+let buttonTextX = '<i class="fas fa-fish" id="fish"></i>';
+let buttonTextO = '<i class="fas fa-frog" id="frog"></i>';
 let counter = 2;
 let buttons = document.getElementsByClassName("space");
 let message = document.getElementById('message');
@@ -19,7 +19,7 @@ function start() {
   x = [];
   o = [];
 
-  message.innerHTML = "It's X's turn";
+  message.innerHTML = "It's Fish's turn";
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].innerHTML = '';
     buttons[i].addEventListener("click", Move);
@@ -43,7 +43,7 @@ function xTurn(box) {
   box.removeEventListener('click', Move);
   checkXWin(box);
   if (checkOWin == true) {
-    message.innerHTML("O Won!");
+    message.innerHTML("Frog Won!");
     removeClicksFromSpaces();
   } else {}
 }
@@ -54,7 +54,7 @@ function oTurn(box) {
   box.removeEventListener('click', Move);
   checkOWin(box);
   if (checkXWin == true) {
-    message.innerHTML = "X Won";
+    message.innerHTML = "Fish won";
     removeClicksFromSpaces();
   } else {}
 }
@@ -62,20 +62,20 @@ function oTurn(box) {
 function checkXWin(box) {
   if (x.includes("1") && x.includes("2") && x.includes("3") || x.includes("4") && x.includes("5") && x.includes("6") || x.includes("7") && x.includes("8") && x.includes("9") || x.includes("1") && x.includes("4") && x.includes("7") || x.includes("2") && x.includes("5") && x.includes("8") || x.includes("3") && x.includes("6") && x.includes("9") || x.includes("1") && x.includes("5") && x.includes("9") || x.includes("3") && x.includes("5") && x.includes("7")) {
     console.log("You're in x win");
-    message.innerHTML = "X Won.";
+    message.innerHTML = "Fish won";
     removeClicksFromSpaces();
   } else {
-    message.innerHTML = "It's O's Turn";
+    message.innerHTML = "It's Frog's Turn";
   }
 }
 
 function checkOWin(box) {
   if (o.includes("1") && o.includes("2") && o.includes("3") || o.includes("4") && o.includes("5") && o.includes("6") || o.includes("7") && o.includes("8") && o.includes("9") || o.includes("1") && o.includes("4") && o.includes("7") || o.includes("2") && o.includes("5") && o.includes("8") || o.includes("3") && o.includes("6") && o.includes("9") || o.includes("1") && o.includes("5") && o.includes("9") || o.includes("3") && o.includes("5") && o.includes("7")) {
     console.log("You're in O win");
-    message.innerHTML = "O Won.";
+    message.innerHTML = "Frog Won.";
     removeClicksFromSpaces();
   } else {
-    message.innerHTML = "It's X's Turn";
+    message.innerHTML = "It's Fish's Turn";
   }
 }
 
