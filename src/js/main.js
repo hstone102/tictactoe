@@ -59,13 +59,13 @@ function oTurn(box){
   box.innerHTML = buttonTextO;
   box.removeEventListener('click', Move);
   checkOWin(box);
-  if (checkOWin == true)
+  if (checkXWin == true)
   {
-    message.innerHTML("O Won!")
+    message.innerHTML = "X Won";
     removeClicksFromSpaces();
   }
   else{
-  message.innerHTML = "It's X's Turn"
+
   }
 
 }
@@ -102,7 +102,7 @@ function checkOWin(box) {
   || (o.includes("1") && o.includes("5") && o.includes("9"))
   || (o.includes("3") && o.includes("5") && o.includes("7")))
   {
-    console.log("You're in y win");
+    console.log("You're in O win");
     message.innerHTML = "O Won.";
     removeClicksFromSpaces();
 
